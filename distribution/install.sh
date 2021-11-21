@@ -65,7 +65,7 @@ docker volume prune --force
 echo "rmi..."
 docker rmi -f $(docker images -q)
 
-echo $ACCESS_TOKEN | docker login --username $GITHUB_USER --password-stdin
+echo $ACCESS_TOKEN | docker login -u $GITHUB_USER --password-stdin ghcr.io
 
 docker image ls
 docker-compose pull
